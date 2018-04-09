@@ -31,6 +31,12 @@ public class tri : MonoBehaviour
     private GameObject newOb;
     public Text text;
 
+    public AudioSource source;
+
+    public AudioClip sound1;
+    public AudioClip sound2;
+
+
 
 
     public GameObject objectToCreate;
@@ -197,7 +203,10 @@ public class tri : MonoBehaviour
     void createObject(Vector3 point)
     {
         StartCoroutine(placeObject(point));
+        source.PlayOneShot(sound1);
+
     }
+
 
     /*
     public void connectDots()
@@ -219,6 +228,7 @@ public class tri : MonoBehaviour
         if (isDeleting == false && isPlacing == false && placeOjects.Count < 2)
         {
             createObject(hitPointCenter);
+
         }
     }
 
@@ -227,6 +237,8 @@ public class tri : MonoBehaviour
     {
         Debug.Log("deleted");
         StartCoroutine(deleteThoseObs());
+        source.PlayOneShot(sound2);
+
     }
 
 
