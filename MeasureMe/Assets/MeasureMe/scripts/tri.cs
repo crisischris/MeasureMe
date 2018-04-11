@@ -200,12 +200,7 @@ public class tri : MonoBehaviour
     }
 
 
-    void createObject(Vector3 point)
-    {
-        StartCoroutine(placeObject(point));
-        source.PlayOneShot(sound1);
 
-    }
 
 
     /*
@@ -232,13 +227,17 @@ public class tri : MonoBehaviour
         }
     }
 
+    void createObject(Vector3 point)
+    {
+        source.PlayOneShot(sound1);
+        StartCoroutine(placeObject(point));
+    }
 
     public void deleteObjs()
     {
         Debug.Log("deleted");
-        StartCoroutine(deleteThoseObs());
         source.PlayOneShot(sound2);
-
+        StartCoroutine(deleteThoseObs());
     }
 
 
